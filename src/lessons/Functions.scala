@@ -1,5 +1,7 @@
 package lessons
 
+import scala.annotation.tailrec
+
 object Functions extends App {
 
   def rStr(s:String, i:Int) : String = if (i == 1) s else s + " " + rStr(s, i - 1)
@@ -7,5 +9,20 @@ object Functions extends App {
   def factorial(a:Int) : Int = if (a == 1) 1 else a + factorial(a - 1)
   def fibonacci(a: Int) : Int = if (a == 1) 1 else if (a == 0) 0 else fibonacci(a - 1) + fibonacci(a - 2)
 
-  print(fibonacci(5))
+  def anotherFactorial(n :BigInt) : BigInt = {
+    @tailrec
+    def helper(x : BigInt, acc:BigInt) :BigInt = {
+      if (x <= 1) acc
+      else helper(x - 1, x * acc)
+    }
+    helper(n, 1)
+  }
+
+  @tailrec
+  def helper(x : BigInt, acc:BigInt) :BigInt = {
+    if (x == 0) acc
+    else helper(x - 1, 1)
+  }
+
+  print(helper(3, 0))
 }
