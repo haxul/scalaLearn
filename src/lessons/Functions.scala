@@ -17,12 +17,4 @@ object Functions extends App {
     }
     helper(n, 1)
   }
-
-  @tailrec
-  def helper(x : BigInt, acc:BigInt) :BigInt = {
-    if (x == 0) acc
-    else helper(x - 1, 1)
-  }
-
-  print(helper(3, 0))
 }
