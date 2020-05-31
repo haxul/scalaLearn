@@ -17,4 +17,6 @@ object Functions extends App {
     }
     helper(n, 1)
   }
+
+  print(rStr(i = 10, s = "hello world"))
 }
