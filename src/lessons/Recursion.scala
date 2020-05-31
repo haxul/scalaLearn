@@ -10,6 +10,17 @@ object Recursion extends App {
     else helper(x - 1, x * acc)
   }
 
+  def sumIf (xs : List[Int]) : Int = {
+
+    @tailrec
+    def filterAndSum(i:Int = 0, acc : Int = 0):Int = {
+      if (i == xs.length) acc
+      else filterAndSum(i + 1, acc + (if (xs(i) > 5 ) xs(i) else 0))
+    }
+    filterAndSum()
+  }
+
+
   @tailrec
   def concat(s: String, n: Int, acc : String = "") : String = {
     if (n == 0) acc
