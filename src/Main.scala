@@ -1,3 +1,7 @@
 object Main extends App {
-  print("hello")
+
+  def f(x:String)(y:Int):String = s"${x} ${y}"
+
+  val fhello = f("hello")(_)
+  print(fhello(123123))
 }
