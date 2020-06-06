@@ -13,6 +13,6 @@ public class Hello {
                         .map(n -> string + " - " + n))
                 .collect(Collectors.toList());
         Map<String, List<String>> collect1 = strings.stream().collect(Collectors.groupingBy((s) -> String.valueOf(s.charAt(0))));
-        
+
     }
 }
