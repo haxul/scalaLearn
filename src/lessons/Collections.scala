@@ -1,5 +1,7 @@
 package lessons
 
+import scala.util.Try
+
 object Collections extends App {
   val seq = Seq(1,2,3)
 //  (1 until  10) foreach print
@@ -10,5 +12,10 @@ object Collections extends App {
   } yield {
     i + 10
   }
-  println(times)
+
+
+  val x : Option[Int] = Some(5)
+  val y : Option[Int] = None
+
+
 }

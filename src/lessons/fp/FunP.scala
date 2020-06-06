@@ -45,19 +45,31 @@ object FunP extends App {
   }
 
   @tailrec
-  def sumList(xs: List[Int], acc: Int = 0): Int = {
-    if (xs.isEmpty) acc
-    else sumList(xs.tail, xs.head + acc)
+  def sumList(ys: List[Int], acc: Int = 0): Int = {
+    val x :: xs:List[Int] = ys
+    xs match {
+        case Nil => acc
+        case _ => sumList(xs, x + acc)
+      }
   }
 
   val result = List(1, 2, 3).flatMap((x: Int) => List(x, x + 10))
-  println(result)
   val numbers = List(1, 2, 3)
   val chars = List("a", "b", "c")
   val words = List("hello", "world")
 
   val res = numbers.flatMap((x) => words.flatMap(w => chars.map(n => x + w + n)))
-  println(res)
+
+  val t = List(1,2,3,4,5)
+  val r = t match {
+    case 1 :: 2 :: 3 :: 4 :: 5 :: Nil => "hello"
+    case List(1, _*) => s"111"
+    case List(_) => "i got it"
+  }
+
+  val head :: tail = List(1,2,3,4,5)
+  println(head)
+  println(tail)
 }
 
 trait Function[A, B] {
