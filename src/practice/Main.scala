@@ -15,10 +15,6 @@ object Main extends App{
 //    case head::Nil => println(s"${head} is on head")
 //    case _ => println("nothing")
 //  }
-  val person = new Person(12)
-  val res = person match {
-    case Person(status) => status
-  }
   object even {
     def unapply(arg: Int): Option[Boolean] = if (arg > 10 ) Some(true) else None
   }
@@ -27,24 +23,4 @@ object Main extends App{
     case even(_) => "it is even"
     case _ => "is odd"
   }
-}
-
-
-class Person (age: Int)
-object Person {
-  def unapply(person: Person): Option[Int] = Some(10)
-}
-
-
-
-
-
-trait Action[+A] {
-}
-class Animal {
-  def say():Unit = println("animal says")
-}
-
-class Dog extends Animal {
-  override def say():Unit = println("dog says")
 }
