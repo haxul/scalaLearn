@@ -31,7 +31,11 @@ object PCon extends App {
   }
   while (true) {
     new Thread(()=> consumer()).start()
+    new Thread(()=> consumer()).start()
+    new Thread(()=> consumer()).start()
     new Thread(()=> producer()).start()
-    Thread.sleep(1000)
+    new Thread(()=> producer()).start()
+    new Thread(()=> producer()).start()
+    Thread.sleep(10)
   }
 }

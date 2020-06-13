@@ -26,5 +26,9 @@ object Communication extends App {
   }
 
   new Thread(() => consumer()).start()
+  new Thread(() => consumer()).start()
+  new Thread(() => consumer()).start()
+  new Thread(() => producer()).start()
+  new Thread(() => producer()).start()
   new Thread(() => producer()).start()
 }
