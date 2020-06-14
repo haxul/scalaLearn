@@ -7,9 +7,13 @@ import scala.util.Success
 object PromiseApp extends App {
   val promise = Promise[Int]()
   val future = promise.future
+  val anotherPromise = Promise[Int]()
 
+  anotherPromise.future.onComplete {
+    case Success(n) => println("is " + n)
+  }
   future.onComplete {
-    case Success(value) => println(value)
+    case Success(value) => anotherPromise.success(value)
   }
 
   new Thread(() => {
