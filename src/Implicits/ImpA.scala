@@ -18,5 +18,9 @@ object ImpA extends App {
     Person("scala",12),
   )
   implicit def ordering:Ordering[Person] = Ordering.fromLessThan((x, y) => x.name < y.name)
-  println(persons.sorted)
+//  println(persons.sorted)
+
+  implicit class RichInt(value:Int) {
+    def isEven
+  }
 }

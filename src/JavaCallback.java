@@ -32,11 +32,16 @@ public class JavaCallback {
         CompletableFuture.supplyAsync(() -> {
             try {
                 Thread.sleep(2000);
+                throw new NullPointerException();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             return "hwl";
-        }).thenAccept((v) -> System.out.println(v));
+        }).thenAccept(System.out::println)
+                .exceptionally((e) -> {
+                    System.out.println("oops");
+                    return null;
+                });
         System.out.println("end");
         Thread.sleep(4000);
     }
