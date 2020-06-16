@@ -21,6 +21,18 @@ object ImpA extends App {
 //  println(persons.sorted)
 
   implicit class RichInt(value:Int) {
-    def isEven
+    def isEven():Boolean = value % 2 == 0
+    def sqrt() :Double = Math.sqrt(value)
   }
+
+  implicit class RichString(str:String) {
+    def asInt() : Int = str.toCharArray.sum
+  }
+
+  implicit def stringToInt(str:String):Int = Integer.valueOf(str)
+
+
+  val result = "Hello world".asInt()
+  println("12" / 6)
+
 }
