@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import javax.swing.*;
 import java.util.Date;
 import java.util.concurrent.Callable;
@@ -46,7 +48,3 @@ public class JavaCallback {
         Thread.sleep(4000);
     }
 }
-
-
-
-
