@@ -28,7 +28,7 @@ object Futures extends App {
 //  val anotherResult = result.map(list => list.map(e => e + 1))
 //  val name = test().filter(map => map("hello").equals("world"))
 
-  val data = test("hello1").map(e => e.toUpperCase).fallbackTo {
+  val data = test("hello").map(e => e.toUpperCase).fallbackTo {
     test("ttt")
   }
   println("here")
